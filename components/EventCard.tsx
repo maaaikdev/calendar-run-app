@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { StyleSheet, View, Image, Text, Animated, Pressable, Dimensions, useWindowDimensions, Platform } from "react-native";
 import { Href, Link } from "expo-router";
 //import { Link } from '@react-navigation/native';
+import { CalendarEvent, distanceProps } from "../lib/calendar-events";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 const baseUrl = 'http://localhost:5001';
@@ -10,21 +11,21 @@ const itemSpacing = 42;
 const numColumns = 2;
 const totalHorizontalPadding = itemSpacing * (numColumns - 1);
 
-interface CardProps {
-    id: number; // Asegúrate de que el id sea de tipo string
-    name: string;
-    date: string;
-    image: string;
-    distance: distanceProps[];
-    place: string;
-}
+// interface CardProps {
+//     id: number; // Asegúrate de que el id sea de tipo string
+//     name: string;
+//     date: string;
+//     image: string;
+//     distance: distanceProps[];
+//     place: string;
+// }
 
-interface distanceProps {
-    run: string;
-    bike: string;
-}
+// interface distanceProps {
+//     run: string;
+//     bike: string;
+// }
 
-export function EventCard({ card }: { card: CardProps }) {
+export function EventCard({ card }: { card: CalendarEvent }) {
 
     const { width } = useWindowDimensions();
 

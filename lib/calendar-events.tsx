@@ -72,7 +72,7 @@ export interface CalendarEvent {
     name: string;
     date: string;
     image: string;
-    distance: string;
+    distance: distanceProps[];
     place: string;
     elevationGain: number;
     category: string;
@@ -80,6 +80,11 @@ export interface CalendarEvent {
     organizationLogo: string;
     urlSite: string;
     location: EventLocation; // Agrega el tipo de ubicación
+}
+
+export interface distanceProps {
+    run: string;
+    bike: string;
 }
 
 export interface EventDetails extends CalendarEvent {
